@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #2a2a2a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.product-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.product-card {
+  flex: 1 1 calc(25% - 20px); /* 4 cards per row with gaps */
+  max-width: calc(25% - 20px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.button-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row on small screens */
+    max-width: calc(50% - 20px);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    flex: 1 1 100%; /* 1 card per row on extra small screens */
+    max-width: 100%;
   }
 }
